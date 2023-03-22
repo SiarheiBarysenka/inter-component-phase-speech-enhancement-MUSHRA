@@ -1,4 +1,4 @@
-testname: webMUSHRA Example
+testname: MUSHRA Listening Test for Inter-component Phase Speech Enhancement Algorithms
 testId: default_example
 bufferSize: 2048
 stopOnErrors: true
@@ -10,46 +10,165 @@ pages:
     - type: generic
       id: first_page
       name: Welcome
-      content: Welcome to webMUSHRA!       
+      content: Press Next to start the listening test...   
     - type: mushra
       id: trial1
-      name: MUSHRA
-      content: This training shows how to use our user interface. Please perform the underlined instructions to proceed with the training session. Reminder: In a MUSHRA listening test you are asked to rate the Basic Audio Quality (BAQ) of each condition.<br/>Basic Audio Quality is a single and global attribute that is used to judge any and all detected differences between the reference and the condition.
+      name: Training
+      content: Listen to the "Reference" audio sample. Then listen to each "Cond." audio sample, and rate its quality from 0 to 100. You can listen any sample as many times as you want. Press "Next" once you're done.
       showWaveform: true
-      enableLooping: true 
-      reference: configs/resources/audio/mono_ref.wav
-      createAnchor35: true
-      createAnchor70: true
+      enableLooping: true
+      reference: configs/resources/audio/lrii3a-trial-clean.wav
+      createAnchor35: false
+      createAnchor70: false
       stimuli:
-          C1: configs/resources/audio/mono_c1.wav
-          C2: configs/resources/audio/mono_c2.wav
-          C3: configs/resources/audio/mono_c3.wav
+          C1: configs/resources/audio/lrii3a-trial-noisy.wav
+          C2: configs/resources/audio/lrii3a-trial-mmse-bh-blw.wav
     - 
           - random
           - type: mushra
-            id: trial_random_1
-            name: MUSHRA - Random 2
-            content: Due to randomization, this page will be either the second MUSHRA page or the third MUSHRA page.
+            id: pe-swwpzs-pink-5
+            name: pe-swwpzs-p-5
+            content: pe-swwpzs-p-5
             enableLooping: true 
-            reference: configs/resources/audio/mono_ref.wav
-            createAnchor35: false
+            reference: configs/resources/audio/swwpzs-clean.wav
+            createAnchor35: true
             createAnchor70: false
             stimuli:
-                C1: configs/resources/audio/mono_c1.wav
-                C2: configs/resources/audio/mono_c2.wav
-                C3: configs/resources/audio/mono_c3.wav          
+                C1: configs/resources/audio/swwpzs-mod-pink-5-noisy.wav
+                C2: configs/resources/audio/swwpzs-mod-pink-5-pe-se-bvm.wav
+                C3: configs/resources/audio/swwpzs-mod-pink-5-pe-bh-blw.wav          
           - type: mushra
-            id: trial_random_2
-            name: MUSHRA - Random 1
-            content: Due to randomization, this page will be either the second MUSHRA page or the third MUSHRA page.
+            id: pe-lrwj3s-pink-10
+            name: pe-slrwj3s-p-10
+            content: pe-lrwj3s-p-10
             enableLooping: true 
-            reference: configs/resources/audio/mono_ref.wav
-            createAnchor35: false
+            reference: configs/resources/audio/lrwj3s-clean.wav
+            createAnchor35: true
             createAnchor70: false
             stimuli:
-                C1: configs/resources/audio/mono_c1.wav
-                C2: configs/resources/audio/mono_c2.wav
-                C3: configs/resources/audio/mono_c3.wav          
+                C1: configs/resources/audio/lrwj3s-mod-pink-10-noisy.wav
+                C2: configs/resources/audio/lrwj3s-mod-pink-10-pe-se-bvm.wav
+                C3: configs/resources/audio/lrwj3s-mod-pink-10-pe-bh-blw.wav
+          - type: mushra
+            id: pe-lrwx1s-factory-5
+            name: pe-lrwx1s-f-5
+            content: pe-lrwx1s-f-5
+            enableLooping: true 
+            reference: configs/resources/audio/lrwx1s-clean.wav
+            createAnchor35: true
+            createAnchor70: false
+            stimuli:
+                C1: configs/resources/audio/lrwx1s-factory-5-noisy.wav
+                C2: configs/resources/audio/lrwx1s-factory-5-pe-se-bvm.wav
+                C3: configs/resources/audio/lrwx1s-factory-5-pe-bh-blw.wav
+          - type: mushra
+            id: pe-brbj6p-factory-10
+            name: pe-brbj6p-f-10
+            content: pe-brbj6p-f-10
+            enableLooping: true 
+            reference: configs/resources/audio/brbj6p-clean.wav
+            createAnchor35: true
+            createAnchor70: false
+            stimuli:
+                C1: configs/resources/audio/brbj6p-factory-10-noisy.wav
+                C2: configs/resources/audio/brbj6p-factory-10-pe-se-bvm.wav
+                C3: configs/resources/audio/brbj6p-factory-10-pe-bh-blw.wav    
+          - type: mushra
+            id: pe-lrivzp-babble-5
+            name: pe-lrivzp-b-5
+            content: pe-lrivzp-b-5
+            enableLooping: true 
+            reference: configs/resources/audio/lrivzp-clean.wav
+            createAnchor35: true
+            createAnchor70: false
+            stimuli:
+                C1: configs/resources/audio/lrivzp-babble-5-noisy.wav
+                C2: configs/resources/audio/lrivzp-babble-5-pe-se-bvm.wav
+                C3: configs/resources/audio/lrivzp-babble-5-pe-bh-blw.wav    
+          - type: mushra
+            id: pe-lrwp7s-babble-10
+            name: pe-lrwp7s-b-10
+            content: pe-lrwp7s-b-10
+            enableLooping: true 
+            reference: configs/resources/audio/lrwp7s-clean.wav
+            createAnchor35: true
+            createAnchor70: false
+            stimuli:
+                C1: configs/resources/audio/lrwp7s-babble-10-noisy.wav
+                C2: configs/resources/audio/lrwp7s-babble-10-pe-se-bvm.wav
+                C3: configs/resources/audio/lrwp7s-babble-10-pe-bh-blw.wav    
+          - type: mushra
+            id: mpe-pgin2p-babble-5
+            name: mpe-pgin2p-b-5
+            content: mpe-pgin2p-b-5
+            enableLooping: true 
+            reference: configs/resources/audio/pgin2p-clean.wav
+            createAnchor35: true
+            createAnchor70: false
+            stimuli:
+                C1: configs/resources/audio/pgin2p-babble-5-mmse.wav
+                C2: configs/resources/audio/pgin2p-babble-5-mmse-se-bvm.wav
+                C3: configs/resources/audio/pgin2p-babble-5-mmse-bh-blw.wav     
+          - type: mushra
+            id: mpe-swiu2s-babble-10
+            name: mpe-swiu2s-b-10
+            content: mpe-swiu2s-b-10
+            enableLooping: true 
+            reference: configs/resources/audio/swiu2s-clean.wav
+            createAnchor35: true
+            createAnchor70: false
+            stimuli:
+                C1: configs/resources/audio/swiu2s-babble-10-mmse.wav
+                C2: configs/resources/audio/swiu2s-babble-10-mmse-se-bvm.wav
+                C3: configs/resources/audio/swiu2s-babble-10-mmse-bh-blw.wav    
+          - type: mushra
+            id: mpe-lrio7a-factory-5
+            name: mpe-lrio7a-f-5
+            content: mpe-lrio7a-f-5
+            enableLooping: true 
+            reference: configs/resources/audio/lrio7a-clean.wav
+            createAnchor35: true
+            createAnchor70: false
+            stimuli:
+                C1: configs/resources/audio/lrio7a-factory-5-mmse.wav
+                C2: configs/resources/audio/lrio7a-factory-5-mmse-se-bvm.wav
+                C3: configs/resources/audio/lrio7a-factory-5-mmse-bh-blw.wav    
+          - type: mushra
+            id: mpe-lrii2p-factory-10
+            name: mpe-lrii2p-f-10
+            content: mpe-lrii2p-f-10
+            enableLooping: true 
+            reference: configs/resources/audio/lrii2p-clean.wav
+            createAnchor35: true
+            createAnchor70: false
+            stimuli:
+                C1: configs/resources/audio/lrii2p-factory-10-mmse.wav
+                C2: configs/resources/audio/lrii2p-factory-10-mmse-se-bvm.wav
+                C3: configs/resources/audio/lrii2p-factory-10-mmse-bh-blw.wav  
+          - type: mushra
+            id: mpe-brav9s-pink-5
+            name: mpe-brav9s-p-5
+            content: mpe-brav9s-p-5
+            enableLooping: true 
+            reference: configs/resources/audio/brav9s-clean.wav
+            createAnchor35: true
+            createAnchor70: false
+            stimuli:
+                C1: configs/resources/audio/brav9s-mod-pink-5-mmse.wav
+                C2: configs/resources/audio/brav9s-mod-pink-5-mmse-se-bvm.wav
+                C3: configs/resources/audio/brav9s-mod-pink-5-mmse-bh-blw.wav 
+          - type: mushra
+            id: mpe-lgap1p-pink-10
+            name: mpe-lgap1p-p-10
+            content: mpe-lgap1p-p-10
+            enableLooping: true 
+            reference: configs/resources/audio/lgap1p-clean.wav
+            createAnchor35: true
+            createAnchor70: false
+            stimuli:
+                C1: configs/resources/audio/lgap1p-mod-pink-10-mmse.wav
+                C2: configs/resources/audio/lgap1p-mod-pink-10-mmse-se-bvm.wav
+                C3: configs/resources/audio/lgap1p-mod-pink-10-mmse-bh-blw.wav 
     - type: finish
       name: Thank you
       content: Thank you for attending!
