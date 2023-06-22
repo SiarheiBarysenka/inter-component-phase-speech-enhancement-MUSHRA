@@ -9,8 +9,9 @@ function icpr_mushra_analysis
 %   References:
 %      [1] S.Y. Barysenka and V.I. Vorobiov, “SNR-based inter-component
 %          phase estimation using bi-phase prior statistics for single-
-%          channel speech enhancement,” Submitted to IEEE/ACM Transactions
-%          on Audio, Speech and Language Processing, 2022.
+%          channel speech enhancement,” IEEE/ACM Transactions on Audio,
+%          Speech and Language Processing, vol. 31, pp. 2365-2381, 2023.
+%          DOI: https://doi.org/10.1109/TASLP.2023.3284514
 
 %   Copyright 2023 Siarhei Y. Barysenka
 
