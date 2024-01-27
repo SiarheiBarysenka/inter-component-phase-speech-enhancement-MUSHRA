@@ -39,13 +39,13 @@ function icpr_mushra_analysis
     %   - data (7x6x14 double):
     %        MUSHRA scores for 14 listeners for each of the 7 systems and 6 noise environments.
     
-    load("icpr_mushra_data.mat");
+    experiment = load("icpr_mushra_data.mat");
     
     % Convert 3D-array [7 x 6 x 14] into 2D array [7 x (6 * 14)]
-    data_for_stats = reshape(data, size(data, 1), size(data, 2) * size(data, 3));
+    data_for_stats = reshape(experiment.data, size(experiment.data, 1), size(experiment.data, 2) * size(experiment.data, 3));
     
     %% Present the table of the mean MUSHRA scores
-    mean_values_table = array2table(conditions', "VariableNames", "Condition");
+    mean_values_table = array2table(experiment.conditions', "VariableNames", "Condition");
     mean_values_table.("Mean") = mean(data_for_stats, 2);
     disp(mean_values_table);
     
@@ -64,9 +64,9 @@ function icpr_mushra_analysis
     % Decoration of the figure appearance and axes
     figure_handle = gcf;
     set(figure_handle, 'units', 'points', 'position', [0, 0, 460, 180]);
-    figure_handle.Children.YTickLabel = flip(conditions);
-    figure_handle.Children.XTick = 1 : numel(conditions);
-    figure_handle.Children.XLim = [1 (numel(conditions) + 1)];
+    figure_handle.Children.YTickLabel = flip(experiment.conditions);
+    figure_handle.Children.XTick = 1 : numel(experiment.conditions);
+    figure_handle.Children.XLim = [1 (numel(experiment.conditions) + 1)];
     figure_handle.Children.Title.String = "";
     figure_handle.Children.XLabel.String = ['Mean Rank' ' (' num2str(confidence_interval, '%.0f') '\% Confidence)'];
     
@@ -105,8 +105,8 @@ function icpr_mushra_analysis
     group_A_indices = diff_table.(condition_A_label);
     group_B_indices = diff_table.(condition_B_label);
     
-    diff_table.(condition_A_label) = arrayfun(@(x) conditions(x), group_A_indices);
-    diff_table.(condition_B_label) = arrayfun(@(x) conditions(x), group_B_indices);
+    diff_table.(condition_A_label) = arrayfun(@(x) experiment.conditions(x), group_A_indices);
+    diff_table.(condition_B_label) = arrayfun(@(x) experiment.conditions(x), group_B_indices);
     
     % Calculate Cliff's Delta
     cliffs_deltas = arrayfun( ...
